@@ -1,0 +1,67 @@
+---
+TreePotato:
+  - Kiwi:
+    - Architecture:
+      - AWS:
+        - CloudFormation:
+          - Buy test domain to test DNS load-balancing etc: {done: Yes, details: kiwipowered.cloud, tags: []}
+          - Deploy sample env stack with just Lintel HelloWorld:
+            - Create Lintel: {done: No, tags: [Lintel]}
+            - JFDI
+          - Find shared graphing tool
+          - Move DNS to AWS:
+            - Write outline plan
+            - Get Golab to review and update
+            - Create sample CF template
+            - Get Golab to review and update
+          - Dev box:
+            - TeamCity:
+              - Install
+              - Create automated backup
+            - Sonatype cache
+            - Node cache
+      - Specification tests:
+        - Analysis
+          - Review and convert Zohreh's and Gavin's dispatch documentation
+        - Code
+          - Add PW to Lintel: {done: No, tags: [Lintel]}
+          - Write JSON API tester for PW
+      - Remedial:
+        - UAT:
+          - Drill through Kiwi Firewall to allow office PIPs to connect to UAT
+    - Analysis
+    - Support:
+      - Southern Water:
+        - Get RW access to UAT DB
+        - Add a second SiteInput to "Kiwi Site for multiplier test":
+          - url: https://komp.testing.kiwipowered.com/processingStation/1236
+          - type: generator
+          - offset: 1000
+          - multiplier: 0.5
+        - Check that the reading = 1000 - (0.5 x PIP-reading)
+    - Quick wins
+      - Set up a single user per subdomain in KOMP, so that 1password completes automatically
+      -
+  - Projects
+    - UrThredz
+    - Pettswood
+    - FQS:
+      - Use Tree component from TreePotato
+    - TreePotato:
+      - Build a tree that can display this YAML file:
+        - YAML to JSON in JavaScript?
+  - House:
+    - Garden
+      - Fence
+      - Garage
+      - Workshop
+      - Plantations:
+        - Paulonia
+          - Calculate prices and yields
+          - What is the best planting density?
+        - Hazel coppicing
+    - Tech:
+     - Build a backup and file hub:
+       - Find a decent RAID array
+
+  - Family
