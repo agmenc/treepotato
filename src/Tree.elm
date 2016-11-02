@@ -51,7 +51,7 @@ cmdOf action model =
 -- VIEW
 
 
-view : Node -> Html (Msg a)
+view : Node -> Html whatever
 view tree =
     case tree of
         Parent children label ->
@@ -61,14 +61,14 @@ view tree =
             leafView label
 
 
-parentView : List Node -> String -> Html (Msg a)
+parentView : List Node -> String -> Html whatever
 parentView children label =
     div
         []
         [ text (label) ]
 
 
-leafView : String -> Html (Msg a)
+leafView : String -> Html whatever
 leafView label =
     div
         []

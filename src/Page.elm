@@ -1,6 +1,5 @@
 module Page exposing (..)
 
-import Messages exposing (..)
 import Bootstrap exposing (..)
 import Tree exposing (..)
 import String
@@ -18,15 +17,20 @@ import Debug exposing (log)
 -- MODULES
 
 
-type alias Component model a =
+type alias Component model =
     { initialModel : model
-    , update : Msg a -> Model -> ( Model, Cmd (Msg a) )
-    , view : Model -> Html (Msg a)
+    , update : PageMsg -> Model -> ( Model, Cmd PageMsg )
+    , view : Model -> Html PageMsg
     }
 
 
 
 -- MODEL
+
+
+type PageMsg
+    = NoAction
+    | TreeMsg
 
 
 type alias Model =
@@ -40,24 +44,31 @@ initialModel =
     Model "" Tree.initialModel
 
 
+type X
+    = A
+    | B
+    | List String
+
+
 
 -- UPDATE
 
 
-update : Msg a -> Model -> ( Model, Cmd (Msg a) )
+update : PageMsg -> Model -> ( Model, Cmd PageMsg )
 update action oldModel =
-    ( { oldModel
-        | treeModel = oldModel.treeModel
-      }
-    , Cmd.none
-    )
+    case action of
+        TreeMsg ->
+            ( { oldModel | treeModel = oldModel.treeModel }, Cmd.none )
+
+        _ ->
+            ( oldModel, Cmd.none )
 
 
 
 -- VIEW
 
 
-view : Model -> Html (Msg a)
+view : Model -> Html whatever
 view model =
     div
         [ pageStyle ]
@@ -73,7 +84,7 @@ view model =
         ]
 
 
-spacer : Html (Msg a)
+spacer : Html whatever
 spacer =
     fullRow
         [ div
@@ -82,7 +93,7 @@ spacer =
         ]
 
 
-pageStyle : Attribute (Msg a)
+pageStyle : Attribute whatever
 pageStyle =
     style
         [ ( "margin-left", "25px" )
@@ -94,6 +105,6 @@ pageStyle =
 -- SUBSCRIPTIONS
 
 
-subscriptions : Model -> Sub (Msg a)
+subscriptions : Model -> Sub PageMsg
 subscriptions model =
     Sub.none

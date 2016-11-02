@@ -2,6 +2,20 @@
 TreePotato:
   - Kiwi:
     - Architecture:
+      - Planning:
+        - London
+          - Describe and diagram the Walking Skeleton
+            - GUI to LINTEL to NewThing to Fruit
+        - Krakow:
+          - Java
+            - Identify further planned steps for dispatch refactoring
+            - Decide whether availability should proceed at teh same time - no, let PHP do it
+            - Reduce the number of GitHub accounts
+          - PHP
+            - ???
+            - Reduce the number of GitHub accounts
+          - Sys Admin
+            - AWS
       - AWS:
         - CloudFormation:
           - Buy test domain to test DNS load-balancing etc: {done: Yes, details: kiwipowered.cloud, tags: []}
