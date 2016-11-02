@@ -65,14 +65,18 @@ parentView : List Node -> String -> Html whatever
 parentView children label =
     div
         []
-        [ text (label) ]
+        [ text label
+        , text " + "
+        ]
 
 
 leafView : String -> Html whatever
 leafView label =
     div
         []
-        [ text (label) ]
+        [ text label
+        , text " +"
+        ]
 
 
 
