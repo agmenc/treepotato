@@ -54,9 +54,12 @@ TreePotato:
           - Add PW to Lintel: {done: No, tags: [Lintel]}
           - Write JSON API tester for PW
         - Fruit Service: {done: No, tags: [FuckingDoItNow, Lintel]}
-          - Create repo
+          - Create repo: {done: Yes}
           - Make PW work against stubs
-          - Add Imp Hello World with Sanal
+          - Create TC on dev/build box instance
+          - Make fruit-service do something testable locally
+          - Make fruit-service do something testable in TC
+          - Add Imp Hello World to Fixture API with Sanal
           - Make PW work locally against Fixture API
           - Make PW work in CI against Fixture API
           - Make PW work in CI against Fruit API
