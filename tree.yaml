@@ -5,9 +5,22 @@ TreePotato:
       - Planning:
         - London
           - Describe and diagram the Walking Skeleton
-            - GUI to LINTEL to NewThing to Fruit
-        - Krakow:
-          - Java
+            - GUI to LINTEL to NewThing to FruitService to Fruit
+        - Architecture Forum:
+          - Outline plan for next few months:
+            - Infrastructure / migration to AWS:
+              - See https://kiwipowered.atlassian.net/wiki/display/TECH/AWS+Configuration
+            - Services:
+              - Dispatch:
+                - Stabilise dispatch in a new, easily-testable DispatchManager
+                - Dispatch PIPs through the new DispatchExecutor
+                - Schedule all dispatches with a new Java scheduler
+                - Provide transaction-like certainty within KOMP that a device has been dispatched
+              - LINTEL:
+                - API aggregator called by new Web components
+                - Initially used to drive end-to-end tests
+                - Will need extra endpoints in KOMP, to trigger Dispatch
+          - Java:
             - Identify further planned steps for dispatch refactoring
             - Decide whether availability should proceed at teh same time - no, let PHP do it
             - Reduce the number of GitHub accounts
@@ -35,11 +48,18 @@ TreePotato:
             - Sonatype cache
             - Node cache
       - Specification tests:
-        - Analysis
+        - Analysis:
           - Review and convert Zohreh's and Gavin's dispatch documentation
-        - Code
+        - Lintel:
           - Add PW to Lintel: {done: No, tags: [Lintel]}
           - Write JSON API tester for PW
+        - Fruit Service: {done: No, tags: [FuckingDoItNow, Lintel]}
+          - Create repo
+          - Make PW work against stubs
+          - Add Imp Hello World with Sanal
+          - Make PW work locally against Fixture API
+          - Make PW work in CI against Fixture API
+          - Make PW work in CI against Fruit API
       - Remedial:
         - UAT:
           - Drill through Kiwi Firewall to allow office PIPs to connect to UAT
