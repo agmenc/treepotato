@@ -28,7 +28,11 @@ type Node
 
 initialModel : Node
 initialModel =
-    Parent [] "root"
+    Parent
+        [ Leaf "A"
+        , Leaf "B"
+        ]
+        "root"
 
 
 
@@ -65,9 +69,7 @@ parentView : List Node -> String -> Html whatever
 parentView children label =
     div
         []
-        [ text label
-        , text " + "
-        ]
+        ((text label) :: (List.map view children))
 
 
 leafView : String -> Html whatever
