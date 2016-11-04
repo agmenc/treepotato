@@ -11,4 +11,6 @@ Features:
 * Create a single Noddy tree
 * Save the tree locally
 * Load the tree locally
+* Export HTML snapshots, so that you can send out meeting minutes
+* Online multi-user mode, for meetings
 

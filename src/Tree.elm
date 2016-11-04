@@ -5,7 +5,7 @@ import Messages exposing (..)
 import String
 import Html.App as Html
 import Html.Events exposing (onClick)
-import Html exposing (Html, div, Attribute, br, text)
+import Html exposing (Html, div, Attribute, br, text, ul, li)
 import Html.Attributes exposing (..)
 import Keyboard exposing (KeyCode, downs)
 import Platform.Cmd exposing (Cmd)
@@ -69,7 +69,10 @@ parentView : List Node -> String -> Html whatever
 parentView children label =
     div
         []
-        ((text label) :: (List.map view children))
+        [ text label
+        , text " +"
+        , ul [] (List.map (\kid -> li [] [ view kid ]) children)
+        ]
 
 
 leafView : String -> Html whatever

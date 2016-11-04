@@ -77,7 +77,7 @@ view model =
             , spacer
             , text ("Typeahead")
             , spacer
-            , Tree.view model.treeModel
+            , row [ Tree.view model.treeModel ]
             , spacer
             , text ("Results")
             ]

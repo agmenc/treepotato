@@ -1,4 +1,24 @@
 ---
+Priorities:
+  - Southern Water page and Query
+    - Test fix in UAT
+    - Get release timeframe from Damian
+  - PW on Lintel
+  - Extract stories from arch_forum.yaml
+  - Arch plan
+    - Diagrams for Golab
+    - Wiki pages for all
+      - Boxes/Stacks
+      - Phases:
+        - Migration (readings)
+          - Move MongoDB to AWS
+          - Provision of metering data from AWS
+            - Requires KOMP changes to access new datasource, when switching off PipAggregator etc
+          - Metering service in two availability zones, load-balanced, feeding InfluxDB
+          - DB Replication, or repeated idempotent scripts
+        - Initial (similar to Linode, except readings)
+        - Service-per-instance (scaling groups, HA, etc)
+---
 TreePotato:
   - Kiwi:
     - Architecture:
