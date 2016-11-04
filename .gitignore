@@ -3,5 +3,6 @@
 workspace.iml
 
 elm-stuff/
-dist/
 node_modules/
+
+arch_forum.yaml

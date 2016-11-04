@@ -1,0 +1,31 @@
+
+.tab .list-group-item-heading, .tab .list-group-item-text {
+    color: black;
+}
+
+.tab.active .list-group-item-heading, .tab.active .list-group-item-text {
+    color: white;
+}
+
+.page-header {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.rotate-ccw {
+    display: block;
+    -webkit-transform: rotate(-90deg);  /* Safari */
+    -moz-transform: rotate(-90deg);     /* Firefox */
+    -ms-transform: rotate(-90deg);      /* IE */
+    -o-transform: rotate(-90deg);       /* Opera */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3); /* Internet Explorer */
+}
+
+.rotate-cw {
+    display: block;
+    -webkit-transform: rotate(90deg);  /* Safari */
+    -moz-transform: rotate(90deg);     /* Firefox */
+    -ms-transform: rotate(90deg);      /* IE */
+    -o-transform: rotate(90deg);       /* Opera */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1); /* Internet Explorer */
+}
