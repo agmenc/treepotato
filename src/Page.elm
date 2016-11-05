@@ -2,6 +2,7 @@ module Page exposing (..)
 
 import Bootstrap exposing (..)
 import Tree exposing (..)
+import SearchTerms exposing (..)
 import String
 import Html.App as Html
 import Html.Events exposing (onClick)
@@ -31,6 +32,7 @@ type alias Component model =
 type PageMsg
     = NoAction
     | TreeMsg
+    | FilterBy String
 
 
 type alias Model =
@@ -68,14 +70,14 @@ update action oldModel =
 -- VIEW
 
 
-view : Model -> Html whatever
+view : Model -> Html PageMsg
 view model =
     div
         [ pageStyle ]
         [ container
             [ text ("TreePotato")
             , spacer
-            , text ("Typeahead")
+            , row [ SearchTerms.view FilterBy ]
             , spacer
             , row [ Tree.view model.treeModel ]
             , spacer
@@ -84,7 +86,7 @@ view model =
         ]
 
 
-spacer : Html whatever
+spacer : Html PageMsg
 spacer =
     fullRow
         [ div
@@ -93,7 +95,7 @@ spacer =
         ]
 
 
-pageStyle : Attribute whatever
+pageStyle : Attribute PageMsg
 pageStyle =
     style
         [ ( "margin-left", "25px" )
