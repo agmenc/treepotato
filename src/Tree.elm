@@ -23,16 +23,30 @@ type TreeMsg
 
 type Node
     = Leaf String
-    | Parent (List Node) String
+    | Parent String (List Node)
 
 
 initialModel : Node
 initialModel =
     Parent
-        [ Leaf "A"
-        , Leaf "B"
-        ]
         "root"
+        [ Parent
+            "Monkeys"
+            [ Parent
+                "Climb"
+                [ Leaf "Trees", Leaf "Elephants" ]
+            , Parent
+                "Fling"
+                [ Leaf "Poo" ]
+            ]
+        , Parent
+            "Elephants"
+            [ Parent
+                "Trunk"
+                [ Leaf "Eat", Leaf "Drink" ]
+            , Leaf "Grey"
+            ]
+        ]
 
 
 
@@ -58,7 +72,7 @@ cmdOf action model =
 view : Node -> Html whatever
 view tree =
     case tree of
-        Parent children label ->
+        Parent label children ->
             parentView children label
 
         Leaf label ->
